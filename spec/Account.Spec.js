@@ -3,7 +3,7 @@ import Account from '../src/Account.js';
 describe('Account tests', () => {
 
     describe('addBalance tests', () => {
-        it('should set the balance to the amount provided', () => {
+        it('should add the amount provided to the balance', () => {
             // Arrange
             let accountA = new Account();
             let amount = 100;
@@ -50,6 +50,33 @@ describe('Account tests', () => {
             // Assert
             expect(() => accountA.withdrawBalance(amount)).toThrowError("Insufficient funds");
             // Found in Jasmine documentation
+
+        });
+
+        it('should subtract the amount provided from the balance', () => {
+            // Arrange
+            let amount = 50;
+            let expectedOutput = 50;
+
+            // Act
+            accountA.withdrawBalance(amount);
+
+            // Assert
+            expect(accountA.getBalance()).toBe(expectedOutput);
+
+        });
+
+        it('should add the transaction to the transactions array', () => {
+            // Arrange
+            let amount = 50;
+            let date = "10/01/2012"
+            let expectedOutput = Object({ date: '10/01/2012', amount: -50 });
+
+            // Act
+            accountA.withdrawBalance(amount, date);
+
+            // Assert
+            expect(accountA.getTransactions()[1]).toEqual(expectedOutput);
 
         });
     });
