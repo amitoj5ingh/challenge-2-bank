@@ -1,6 +1,7 @@
 class User {
     #username;
     #password;
+    #account;
 
     constructor(username, password) {
         this.#username = username;
@@ -12,6 +13,14 @@ class User {
             return true;
         }
         return false;
+    }
+
+    depositFunds(amount) {
+        this.#account.setBalance(amount);
+    }
+
+    setAccount(account) {
+        this.#account = account;
     }
 
 }
