@@ -7,6 +7,14 @@ class Account {
         this.#transactions.push({ date: date, amount: amount });
     }
 
+    withdrawBalance(amount, date) {
+        if (amount > this.#balance) {
+            throw new Error("Insufficient funds");
+        }
+        this.#balance -= amount;
+        this.#transactions.push({ date: date, amount: -amount });
+    }
+
     getBalance() {
         return this.#balance;
     }

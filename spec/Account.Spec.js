@@ -33,4 +33,25 @@ describe('Account tests', () => {
         });
     });
 
+    describe('withdrawBalance tests', () => {
+        let accountA;
+
+        beforeEach(() => {
+            accountA = new Account();
+            accountA.addBalance(100);
+        });
+
+        it('should deny the withdrawal if the input is greater than the balance', () => {
+            // Arrange
+            let amount = 1000;
+
+            // Act
+
+            // Assert
+            expect(() => accountA.withdrawBalance(amount)).toThrowError("Insufficient funds");
+            // Found in Jasmine documentation
+
+        });
+    });
+
 });

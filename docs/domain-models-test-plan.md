@@ -40,18 +40,15 @@ As an account holder, I want to withdraw funds from my account, so that I can sp
 
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
-| User | username@String | withdrawFunds(@Float, @String) | @Float |
+| User | username@String | withdrawFunds(@Float, @String) | @Void |
 | | account@Account | | |
 | Account | balance@Float | withdrawBalance(@Float, @String) | @Void |
 
 ### Tests
 1. When withdrawFunds is called, it calls the withdrawBalance function in the Account object.
-2. The user input is a float.
-4. The user input is greater than 0.
-5. If the user input is greater than the user's balance, the withdrawal is denied.
-6. When withdrawBalance is called, the entered amount is subtracted from the user's balance.
-7. The withdrawFunds function returns the amount withdrawn.
-8. The transaction is added to the transactions array.
+2. If the user input is greater than the user's balance, the withdrawal is denied.
+3. When withdrawBalance is called, the entered amount is subtracted from the user's balance.
+4. The transaction is added to the transactions array.
 
 
 ## User Story 4

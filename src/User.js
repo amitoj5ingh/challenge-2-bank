@@ -19,6 +19,10 @@ class User {
         this.#account.addBalance(amount);
     }
 
+    withdrawFunds(amount, date) {
+        this.#account.subtractBalance(amount);
+    }
+
     setAccount(account) {
         this.#account = account;
     }

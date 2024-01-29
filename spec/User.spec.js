@@ -40,4 +40,25 @@ describe('User tests', () => {
         });
     });
 
+    describe('withdraw tests', () => {
+        let userA;
+
+        beforeEach(() => {
+            userA = new User('testUser', 'testPassword');
+        });
+
+        it('should call the withdrawBalance method in the Account object when withdrawFunds is called', () => {
+            // Arrange
+            let accountA = jasmine.createSpyObj('accountA', ['subtractBalance']);
+            userA.setAccount(accountA);
+
+            // Act
+            userA.withdrawFunds(100);
+
+            // Assert
+            expect(accountA.subtractBalance).toHaveBeenCalled();
+
+        });
+    });
+
 });
