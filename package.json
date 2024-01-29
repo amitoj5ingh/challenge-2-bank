@@ -1,0 +1,27 @@
+{
+  "name": "challenge-2-bank-amitoj5ingh",
+  "version": "1.0.0",
+  "description": "Challenge 2 - The Bank Challenge",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-futures-academy-se-challenges/challenge-2-bank-amitoj5ingh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digital-futures-academy-se-challenges/challenge-2-bank-amitoj5ingh/issues"
+  },
+  "homepage": "https://github.com/digital-futures-academy-se-challenges/challenge-2-bank-amitoj5ingh#readme",
+  "devDependencies": {
+    "jasmine": "^5.1.0"
+  }
+}
