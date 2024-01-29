@@ -22,7 +22,6 @@ As an account holder, I want to deposit funds into my account, so that I can sto
 
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
-| Bank | users@Array[@user] | | |
 | User | username@String | | |
 | | account@Account | depositFunds(@Float) | @Void |
 | Account | balance@Float | setBalance(@Float) | @Void |
@@ -43,7 +42,6 @@ As an account holder, I want to withdraw funds from my account, so that I can sp
 
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
-| Bank | users@Array[@User] | | |
 | User | username@String | withdrawFunds(@Float) | @Float |
 | | account@Account | | |
 | Account | balance@Float | setBalance(@Float) | @Void |
@@ -65,11 +63,11 @@ As an account holder, I want to see an account statement, so that I can view my 
 
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
-| Bank | users@Array[@User] | printAccountStatement(username) | @String |
 | User | username@String | | |
 | | account@Account | | |
 | Account | balance@Float | getBalance() | @Float |
 | | transactions@Array[@String] | getTransactions() | @Array[@String] |
+| AccountStatementPrinter | | printAccountStatement(@Account) | @String |
 
 ### Tests
 1. When printAccountStatement is called, the user's transaction history is returned.
