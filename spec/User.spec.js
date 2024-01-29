@@ -20,17 +20,22 @@ describe('User tests', () => {
     });
 
     describe('deposit tests', () => {
-        it('should call the setBalance method in the Account object when depositFunds is called', () => {
+        let userA;
+
+        beforeEach(() => {
+            userA = new User('testUser', 'testPassword');
+        });
+
+        it('should call the addBalance method in the Account object when depositFunds is called', () => {
             // Arrange
-            let userA = new User('testUser', 'testPassword');
-            let accountA = jasmine.createSpyObj('accountA', ['setBalance']);
+            let accountA = jasmine.createSpyObj('accountA', ['addBalance']);
             userA.setAccount(accountA);
 
             // Act
             userA.depositFunds(100);
 
             // Assert
-            expect(accountA.setBalance).toHaveBeenCalled();
+            expect(accountA.addBalance).toHaveBeenCalled();
 
         });
     });

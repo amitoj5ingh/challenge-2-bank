@@ -23,16 +23,14 @@ As an account holder, I want to deposit funds into my account, so that I can sto
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
 | User | username@String | | |
-| | account@Account | depositFunds(@Float) | @Void |
-| Account | balance@Float | setBalance(@Float) | @Void |
+| | account@Account | depositFunds(@Float, @String) | @Void |
+| Account | balance@Float | addBalance(@Float, @String) | @Void |
 | | transactions@Array[@String] | | |
 
 ### Tests
-1. When depositFunds is called, it calls the setBalance function in the Account object.
-2. The user input is a float.
-4. The user input is greater than 0.
-5. When setBalance is called, the entered amount is added to the user's balance.
-6. The transaction is added to the transactions array.
+1. When depositFunds is called, it calls the addBalance function in the Account object.
+2. When addBalance is called, the entered amount is added to the user's balance.
+3. The transaction is added to the transactions array.
 
 
 ## User Story 3
@@ -42,16 +40,16 @@ As an account holder, I want to withdraw funds from my account, so that I can sp
 
 | Object | Attributes | Messages | Outputs |
 | --- | --- | --- | --- |
-| User | username@String | withdrawFunds(@Float) | @Float |
+| User | username@String | withdrawFunds(@Float, @String) | @Float |
 | | account@Account | | |
-| Account | balance@Float | setBalance(@Float) | @Void |
+| Account | balance@Float | withdrawBalance(@Float, @String) | @Void |
 
 ### Tests
-1. When withdrawFunds is called, it calls the setBalance function in the Account object.
+1. When withdrawFunds is called, it calls the withdrawBalance function in the Account object.
 2. The user input is a float.
 4. The user input is greater than 0.
 5. If the user input is greater than the user's balance, the withdrawal is denied.
-6. When setBalance is called, the entered amount is subtracted from the user's balance.
+6. When withdrawBalance is called, the entered amount is subtracted from the user's balance.
 7. The withdrawFunds function returns the amount withdrawn.
 8. The transaction is added to the transactions array.
 

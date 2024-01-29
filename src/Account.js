@@ -2,8 +2,17 @@ class Account {
     #balance = 0.0;
     #transactions = [];
 
-    setBalance(amount) {
-        this.#balance = amount;
+    addBalance(amount, date) {
+        this.#balance += amount;
+        this.#transactions.push({ date: date, amount: amount });
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+
+    getTransactions() {
+        return this.#transactions;
     }
 }
 

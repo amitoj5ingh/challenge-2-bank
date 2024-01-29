@@ -15,8 +15,8 @@ class User {
         return false;
     }
 
-    depositFunds(amount) {
-        this.#account.setBalance(amount);
+    depositFunds(amount, date) {
+        this.#account.addBalance(amount);
     }
 
     setAccount(account) {
