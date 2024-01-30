@@ -16,11 +16,11 @@ class User {
     }
 
     depositFunds(amount, date) {
-        this.#account.addBalance(amount);
+        this.#account.addBalance(amount, date);
     }
 
     withdrawFunds(amount, date) {
-        this.#account.subtractBalance(amount);
+        this.#account.withdrawBalance(amount, date);
     }
 
     setAccount(account) {

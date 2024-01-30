@@ -49,14 +49,14 @@ describe('User tests', () => {
 
         it('should call the withdrawBalance method in the Account object when withdrawFunds is called', () => {
             // Arrange
-            let accountA = jasmine.createSpyObj('accountA', ['subtractBalance']);
+            let accountA = jasmine.createSpyObj('accountA', ['withdrawBalance']);
             userA.setAccount(accountA);
 
             // Act
             userA.withdrawFunds(100);
 
             // Assert
-            expect(accountA.subtractBalance).toHaveBeenCalled();
+            expect(accountA.withdrawBalance).toHaveBeenCalled();
 
         });
     });
